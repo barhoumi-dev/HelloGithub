@@ -13,6 +13,9 @@ jobs: # a collection of steps
           name: install-node-2
           command: 'apt-get install -y nodejs'
       - run:
+          name: install-node-3
+          command: 'node -v'
+      - run:
           name: install-yarn
           command: 'npm install -g yarn'
       - restore_cache: # special step to restore the dependency cache
