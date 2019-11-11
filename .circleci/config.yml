@@ -23,6 +23,9 @@ jobs: # a collection of steps
           key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
+      - run:
+          name: install-cypress
+          command: cypress install
       - run: # run unit tests
           name: unit-test
           command: yarn test:unit --coverage --json --outputFile=test-results.json
