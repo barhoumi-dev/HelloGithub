@@ -35,9 +35,9 @@ jobs: # a collection of steps
           prefix: coverage
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test-results.json
-#      - run: # run e2e tests
-#          name: e2e-test
-#          command: yarn test:e2e
+      - run: # run e2e tests
+          name: e2e-test
+          command: yarn test:e2e
       - run: # run build
           name: build
           command: yarn build
