@@ -10,11 +10,8 @@ jobs: # a collection of steps
           name: install-node
           command: 'curl -sL https://deb.nodesource.com/setup_12.x | bash && apt-get install nodejs'
       - run:
-          name: update-npm
-          command: 'npm install -g npm@latest'
-      - run:
           name: update-yarn
-          command: 'npm install -g yarn@latest'
+          command: 'npm install -g yarn'
       - restore_cache: # special step to restore the dependency cache
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: dependency-cache-{{ checksum "yarn.lock" }}
