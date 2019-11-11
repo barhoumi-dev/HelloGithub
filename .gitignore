@@ -24,5 +24,4 @@ yarn-error.log*
 *.sln
 *.sw?
 
-test-results.json
-junit.xml
+test-results/

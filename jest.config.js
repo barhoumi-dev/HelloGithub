@@ -4,5 +4,5 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ["src/**/*.{js,vue,ts}", "!**/node_modules/**", "!**/dist/**", "!**/coverage/**"],
 
-  reporters: ["default", "jest-junit"],
+  reporters: ["default", ["jest-junit", {"outputDirectory": 'test-results/jest', "outputName": "result.xml"}]],
 };
