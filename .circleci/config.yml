@@ -3,8 +3,7 @@ jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
     working_directory: ~/hello # directory where steps will run
     docker: # run the steps with Docker
-      - image: circleci/node:10.16.3 # ...with this image as the primary container; this is where all `steps` will run
-      - image: cypress/browsers:chrome67 # cypress image
+      - image: cypress/browsers:chrome67 # ...with this image as the primary container; this is where all `steps` will run
     steps: # a collection of executable commands
       - checkout # special step to check out source code to working directory
       - run:
@@ -23,9 +22,6 @@ jobs: # a collection of steps
           key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
-      - run:
-          name: install-cypress
-          command: cypress install
       - run: # run unit tests
           name: unit-test
           command: yarn test:unit --coverage --json --outputFile=test-results.json
